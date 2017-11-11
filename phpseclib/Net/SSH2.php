@@ -3473,7 +3473,7 @@ class Net_SSH2
 $this->_append_log('### diagnostics', 'skipping packet');
                         $this->binary_packet_buffer = $payload;
                         $this->_get_channel_packet(true);
-                        $payload = $this->_get_binary_packet(true);
+                        $payload = $this->_get_binary_packet();
                     }
                     break;
                 case NET_SSH2_MSG_GLOBAL_REQUEST: // see http://tools.ietf.org/html/rfc4254#section-4
