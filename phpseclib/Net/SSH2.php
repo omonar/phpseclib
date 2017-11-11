@@ -3470,6 +3470,7 @@ class Net_SSH2
                 case NET_SSH2_MSG_CHANNEL_CLOSE:
                 case NET_SSH2_MSG_CHANNEL_EOF:
                     if (!$skip_channel_filter && !empty($this->server_channels)) {
+$this->_append_log('### diagnostics', 'skipping packet');
                         $this->binary_packet_buffer = $payload;
                         $this->_get_channel_packet(true);
                         $payload = $this->_get_binary_packet(true);
