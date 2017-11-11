@@ -156,6 +156,7 @@ class Functional_Net_SSH2Test extends PhpseclibFunctionalTestCase
      */
     public function testChannelDataAfterOpen($ssh)
     {
+try {
         $ssh->write("ping 127.0.0.1\n");
 
         $ssh->enablePTY();
@@ -166,5 +167,8 @@ class Functional_Net_SSH2Test extends PhpseclibFunctionalTestCase
         $ssh->setTimeout(1);
 
         $ssh->read();
+} catch (Exception $e) {
+exit('zzzzz');
+}
     }
 }
