@@ -6,6 +6,8 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
+define('NET_SSH2_LOGGING', 2);
+
 class Functional_Net_SSH2Test extends PhpseclibFunctionalTestCase
 {
     public function testConstructor()
@@ -168,7 +170,7 @@ try {
 
         $ssh->read();
 } catch (Exception $e) {
-exit('zzzzz');
+echo $ssh->getLog(); exit;
 }
     }
 }
