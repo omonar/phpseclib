@@ -170,7 +170,9 @@ try {
 
         $ssh->read();
 } catch (Exception $e) {
-echo $ssh->getLog(); exit;
+echo $ssh->getLog();
+user_error('zzzz');
+exit;
 }
     }
 }
