@@ -9,6 +9,8 @@ abstract class PhpseclibFunctionalTestCase extends PhpseclibTestCase
 {
     public static function setUpBeforeClass()
     {
+        require_once 'Math/BigInteger.php';
+
         if (extension_loaded('runkit')) {
             if (extension_loaded('gmp')) {
                 self::ensureConstant(
