@@ -10,6 +10,7 @@ abstract class PhpseclibFunctionalTestCase extends PhpseclibTestCase
     public static function setUpBeforeClass()
     {
         require_once 'Math/BigInteger.php';
+        require_once 'Crypt/Hash.php';
 
         if (extension_loaded('runkit')) {
             if (extension_loaded('gmp')) {
