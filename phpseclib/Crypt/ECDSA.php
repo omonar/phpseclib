@@ -211,11 +211,11 @@ class ECDSA extends AsymmetricKey
             return false;
         }
 
-        if ($components['curve'] instanceof Ed25519 && $this->hash != 'sha512') {
+        if ($components['curve'] instanceof Ed25519 && $this->hashManuallySet && $this->hash->getHash() != 'sha512') {
             $this->clearKey();
             throw new \RuntimeException('Ed25519 only supports sha512 as a hash');
         }
-        if ($components['curve'] instanceof Ed448 && $this->hash != 'shake256-912') {
+        if ($components['curve'] instanceof Ed448 && $this->hashManuallySet && $this->hash->getHash() != 'shake256-912') {
             $this->clearKey();
             throw new \RuntimeException('Ed448 only supports shake256 with a length of 114 bytes');
         }
