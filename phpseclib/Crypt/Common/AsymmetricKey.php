@@ -152,6 +152,14 @@ abstract class AsymmetricKey
     private $hmac;
 
     /**
+     * Hash manually set?
+     *
+     * @var bool
+     * @access private
+     */
+    protected $hashManuallySet = false;
+
+    /**
      * Available Engines
      *
      * @var boolean[]
@@ -594,6 +602,8 @@ abstract class AsymmetricKey
     {
         $this->hash = new Hash($hash);
         $this->hmac = new Hash($hash);
+
+        $this->hashManuallySet = true;
     }
 
     /**
