@@ -201,7 +201,7 @@ class ECDSA extends AsymmetricKey
             $this->parametersFormat = $key->parametersFormat;
             $this->hash = $key->hash;
 
-            parent::load($key);
+            parent::load($key, false);
 
             return true;
         }
