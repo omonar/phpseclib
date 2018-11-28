@@ -292,6 +292,12 @@ abstract class AsymmetricKey
      */
     protected function load($key, $type)
     {
+        if ($key instanceof self) {
+            $this->hmac = $key->hmac;
+
+            return;
+        }
+
         $components = false;
         if ($type === false) {
             foreach (self::$plugins[static::ALGORITHM]['Keys'] as $format) {

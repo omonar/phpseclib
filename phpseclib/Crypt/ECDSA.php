@@ -200,7 +200,8 @@ class ECDSA extends AsymmetricKey
             $this->curve = $key->curve;
             $this->parametersFormat = $key->parametersFormat;
             $this->hash = $key->hash;
-            $this->hmac = $key->hmac;
+
+            parent::load($key);
 
             return true;
         }
